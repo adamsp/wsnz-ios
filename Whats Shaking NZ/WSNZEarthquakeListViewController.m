@@ -62,24 +62,10 @@
     
     // TODO Should be using a custom view
     Earthquake *earthquake = [[self.model quakes] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%.1f", [earthquake.magnitude doubleValue]];
-    // TODO Should be using NSDateFormatter
-    cell.detailTextLabel.text = [earthquake.date description];
+    cell.textLabel.text = earthquake.formattedMagnitude;
+    cell.detailTextLabel.text = earthquake.formattedDate;
     
     return cell;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 #pragma mark - EarthquakesUpdatedDelegate

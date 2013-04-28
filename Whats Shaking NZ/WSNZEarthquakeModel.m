@@ -83,11 +83,6 @@ static bool downloading = false;
     downloading = false;    
 }
 
-//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-//{
-//
-//}
-
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSMutableArray *parsedQuakes = [[NSMutableArray alloc] initWithCapacity:30];

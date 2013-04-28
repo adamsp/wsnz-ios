@@ -13,9 +13,12 @@
 @property (nonatomic, retain) NSNumber* longitude;
 @property (nonatomic, retain) NSNumber* latitude;
 @property (nonatomic, retain) NSNumber* depth;
+@property (nonatomic, retain) NSString* formattedDepth;
 @property (nonatomic, retain) NSNumber* magnitude;
+@property (nonatomic, retain) NSString* formattedMagnitude;
 @property (nonatomic, retain) NSString* reference;
 @property (nonatomic, retain) NSString* agency;
 @property (nonatomic, retain) NSDate* date;
+@property (nonatomic, retain) NSString* formattedDate;
 @property (nonatomic, retain) NSString* status;
 @end
