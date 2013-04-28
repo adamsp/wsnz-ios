@@ -22,6 +22,7 @@
 		6613DAD717288C92002D0FF2 /* Earthquake.m in Sources */ = {isa = PBXBuildFile; fileRef = 6613DAD617288C92002D0FF2 /* Earthquake.m */; };
 		6613DADA17289089002D0FF2 /* WSNZEarthquakeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6613DAD917289089002D0FF2 /* WSNZEarthquakeListViewController.m */; };
 		6613DADE17289AAC002D0FF2 /* WSNZEarthquakeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6613DADD17289AAC002D0FF2 /* WSNZEarthquakeModel.m */; };
+		66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		66142ABD1728C2AA006D9E67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		66142ABE1728C2AA006D9E67 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		66142AE3172C8C84006D9E67 /* EarthquakesUpdatedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EarthquakesUpdatedDelegate.h; sourceTree = "<group>"; };
+		66E552BD172CDD8000D160AE /* WSNZEarthquakeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNZEarthquakeDetailViewController.h; sourceTree = "<group>"; };
+		66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNZEarthquakeDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				6613DADC17289AAC002D0FF2 /* WSNZEarthquakeModel.h */,
 				6613DADD17289AAC002D0FF2 /* WSNZEarthquakeModel.m */,
 				66142AE3172C8C84006D9E67 /* EarthquakesUpdatedDelegate.h */,
+				66E552BD172CDD8000D160AE /* WSNZEarthquakeDetailViewController.h */,
+				66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */,
 			);
 			path = "Whats Shaking NZ";
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				6613DAD717288C92002D0FF2 /* Earthquake.m in Sources */,
 				6613DADA17289089002D0FF2 /* WSNZEarthquakeListViewController.m in Sources */,
 				6613DADE17289AAC002D0FF2 /* WSNZEarthquakeModel.m in Sources */,
+				66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

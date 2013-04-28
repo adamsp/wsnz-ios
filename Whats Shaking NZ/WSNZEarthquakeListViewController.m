@@ -89,5 +89,12 @@
     [self.tableView reloadData];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showDetail"]){
+        WSNZEarthquakeDetailViewController *controller = (WSNZEarthquakeDetailViewController *)segue.destinationViewController;
+        controller.quake = [self.model.quakes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+}
+
 @end
 
