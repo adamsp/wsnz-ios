@@ -91,7 +91,7 @@ static bool downloading = false;
     NSArray *features = [json objectForKey:@"features"];
     for (NSDictionary *feature in features) {
         Earthquake *quake = [[Earthquake alloc] init];
-        NSArray *coords = [feature objectForKey:@"coordinates"];
+        NSArray *coords = [[feature objectForKey:@"geometry"] objectForKey:@"coordinates"];
         quake.longitude = [coords objectAtIndex:0];
         quake.latitude = [coords objectAtIndex:1];
         NSDictionary *properties = [feature objectForKey:@"properties"];

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "Earthquake.h"
 
-@interface WSNZEarthquakeDetailViewController : UIViewController
+@interface WSNZEarthquakeDetailViewController : UIViewController <MKMapViewDelegate>
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) Earthquake *quake;
 @end

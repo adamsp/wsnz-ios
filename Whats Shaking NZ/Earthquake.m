@@ -11,11 +11,8 @@
 @implementation Earthquake
 @synthesize longitude;
 @synthesize latitude;
-//@synthesize depth = _depth;
-//@synthesize magnitude = _magnitude;
 @synthesize reference;
 @synthesize agency;
-//@synthesize date;
 @synthesize status;
 
 -(void) setDepth:(NSNumber *)depth {
@@ -44,5 +41,19 @@
 
 -(NSString *)formattedDate {
     return _formattedDate;
+}
+
+-(CLLocationCoordinate2D)coordinate
+{
+    return CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longitude.doubleValue);
+}
+
+-(id <MKAnnotation>) makeMKAnnotation
+{
+    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+    pin.coordinate = self.coordinate;
+    pin.title = self.formattedMagnitude;
+    pin.subtitle = self.formattedDepth;
+    return pin;
 }
 @end

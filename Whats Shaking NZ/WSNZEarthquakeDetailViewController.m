@@ -19,6 +19,7 @@ static const int DATE_TAG = 3;
 static const int STATUS_TAG = 4;
 
 @synthesize quake = _quake;
+@synthesize mapView;
 
 - (void)viewDidLoad
 {
@@ -31,6 +32,11 @@ static const int STATUS_TAG = 4;
     label.text = self.quake.formattedDate;
     label = (UILabel *)[self.view viewWithTag:STATUS_TAG];
     label.text = self.quake.status;
+    
+    [self.mapView addAnnotation:self.quake.makeMKAnnotation];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.quake.coordinate, 120000, 120000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
 @end

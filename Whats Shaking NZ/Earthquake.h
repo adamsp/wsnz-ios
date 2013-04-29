@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 #include <stdlib.h>
 
 @interface Earthquake : NSObject
@@ -21,4 +22,6 @@
 @property (nonatomic, retain) NSDate* date;
 @property (nonatomic, retain) NSString* formattedDate;
 @property (nonatomic, retain) NSString* status;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+-(id <MKAnnotation>) makeMKAnnotation;
 @end

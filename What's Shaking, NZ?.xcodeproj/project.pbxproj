@@ -23,6 +23,8 @@
 		6613DADA17289089002D0FF2 /* WSNZEarthquakeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6613DAD917289089002D0FF2 /* WSNZEarthquakeListViewController.m */; };
 		6613DADE17289AAC002D0FF2 /* WSNZEarthquakeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6613DADD17289AAC002D0FF2 /* WSNZEarthquakeModel.m */; };
 		66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */; };
+		66E552C1172E5BD700D160AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E552C0172E5BD700D160AE /* CoreLocation.framework */; };
+		66E552C4172E60FD00D160AE /* WSNZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552C3172E60FD00D160AE /* WSNZMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		66142AE3172C8C84006D9E67 /* EarthquakesUpdatedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EarthquakesUpdatedDelegate.h; sourceTree = "<group>"; };
 		66E552BD172CDD8000D160AE /* WSNZEarthquakeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNZEarthquakeDetailViewController.h; sourceTree = "<group>"; };
 		66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNZEarthquakeDetailViewController.m; sourceTree = "<group>"; };
+		66E552C0172E5BD700D160AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		66E552C2172E60FD00D160AE /* WSNZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNZMapViewController.h; sourceTree = "<group>"; };
+		66E552C3172E60FD00D160AE /* WSNZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNZMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E552C1172E5BD700D160AE /* CoreLocation.framework in Frameworks */,
 				6613DAD4172889D5002D0FF2 /* MapKit.framework in Frameworks */,
 				6613DAAE172888F0002D0FF2 /* UIKit.framework in Frameworks */,
 				6613DAB0172888F0002D0FF2 /* Foundation.framework in Frameworks */,
@@ -75,6 +81,7 @@
 		6613DAA1172888F0002D0FF2 = {
 			isa = PBXGroup;
 			children = (
+				66E552C0172E5BD700D160AE /* CoreLocation.framework */,
 				66142ABB1728C2AA006D9E67 /* CFNetwork.framework */,
 				66142ABC1728C2AA006D9E67 /* CoreData.framework */,
 				66142ABD1728C2AA006D9E67 /* Security.framework */,
@@ -121,6 +128,8 @@
 				66142AE3172C8C84006D9E67 /* EarthquakesUpdatedDelegate.h */,
 				66E552BD172CDD8000D160AE /* WSNZEarthquakeDetailViewController.h */,
 				66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */,
+				66E552C2172E60FD00D160AE /* WSNZMapViewController.h */,
+				66E552C3172E60FD00D160AE /* WSNZMapViewController.m */,
 			);
 			path = "Whats Shaking NZ";
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 				6613DADA17289089002D0FF2 /* WSNZEarthquakeListViewController.m in Sources */,
 				6613DADE17289AAC002D0FF2 /* WSNZEarthquakeModel.m in Sources */,
 				66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */,
+				66E552C4172E60FD00D160AE /* WSNZMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
