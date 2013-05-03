@@ -18,8 +18,10 @@ static const int DEPTH_TAG = 2;
 static const int DATE_TAG = 3;
 static const int STATUS_TAG = 4;
 
-@synthesize quake = _quake;
-@synthesize mapView;
+@synthesize quake;
+
+// TODO This exists here and in the map VC.
+static NSString *reuseId = @"pin";
 
 - (void)viewDidLoad
 {
@@ -33,10 +35,25 @@ static const int STATUS_TAG = 4;
     label = (UILabel *)[self.view viewWithTag:STATUS_TAG];
     label.text = self.quake.status;
     
-    [self.mapView addAnnotation:self.quake.makeMKAnnotation];
+    [self.mapView addAnnotation:[self.quake makeMKAnnotationForIndex:0]];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.quake.coordinate, 120000, 120000);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation
+{
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
+    
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
+        annotationView.canShowCallout = YES;
+    } else {
+        annotationView.annotation = annotation;
+    }
+    annotationView.pinColor = self.quake.pinColor;
+    
+    return annotationView;
 }
 
 @end

@@ -25,6 +25,7 @@
 		66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */; };
 		66E552C1172E5BD700D160AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E552C0172E5BD700D160AE /* CoreLocation.framework */; };
 		66E552C4172E60FD00D160AE /* WSNZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552C3172E60FD00D160AE /* WSNZMapViewController.m */; };
+		66E552C71734571B00D160AE /* EarthquakeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552C61734571B00D160AE /* EarthquakeAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		66E552C0172E5BD700D160AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		66E552C2172E60FD00D160AE /* WSNZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNZMapViewController.h; sourceTree = "<group>"; };
 		66E552C3172E60FD00D160AE /* WSNZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNZMapViewController.m; sourceTree = "<group>"; };
+		66E552C51734571B00D160AE /* EarthquakeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarthquakeAnnotation.h; sourceTree = "<group>"; };
+		66E552C61734571B00D160AE /* EarthquakeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarthquakeAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */,
 				66E552C2172E60FD00D160AE /* WSNZMapViewController.h */,
 				66E552C3172E60FD00D160AE /* WSNZMapViewController.m */,
+				66E552C51734571B00D160AE /* EarthquakeAnnotation.h */,
+				66E552C61734571B00D160AE /* EarthquakeAnnotation.m */,
 			);
 			path = "Whats Shaking NZ";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				6613DADE17289AAC002D0FF2 /* WSNZEarthquakeModel.m in Sources */,
 				66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */,
 				66E552C4172E60FD00D160AE /* WSNZMapViewController.m in Sources */,
+				66E552C71734571B00D160AE /* EarthquakeAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

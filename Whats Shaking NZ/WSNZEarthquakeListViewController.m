@@ -17,6 +17,10 @@
 
 @synthesize model = _model;
 
+// TODO This exists here and in the map VC.
+static NSString *segueId = @"showDetail";
+static NSString *cellId = @"quakeDescriptionCell";
+
 - (WSNZEarthquakeModel*) model {
     if (!_model)
     {
@@ -57,8 +61,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Earthquake Description";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     // TODO Should be using a custom view
     Earthquake *earthquake = [[self.model quakes] objectAtIndex:indexPath.row];
@@ -76,7 +79,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"showDetail"]){
+    if([segue.identifier isEqualToString:segueId]){
         WSNZEarthquakeDetailViewController *controller = (WSNZEarthquakeDetailViewController *)segue.destinationViewController;
         controller.quake = [self.model.quakes objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     }

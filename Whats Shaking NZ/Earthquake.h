@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #include <stdlib.h>
+#include "EarthquakeAnnotation.h"
 
 @interface Earthquake : NSObject
 @property (nonatomic, retain) NSNumber* longitude;
@@ -23,5 +24,6 @@
 @property (nonatomic, retain) NSString* formattedDate;
 @property (nonatomic, retain) NSString* status;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
--(id <MKAnnotation>) makeMKAnnotation;
+@property (nonatomic) MKPinAnnotationColor pinColor;
+-(EarthquakeAnnotation *) makeMKAnnotationForIndex:(NSInteger) index;
 @end

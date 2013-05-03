@@ -10,6 +10,8 @@
 #import <MapKit/MapKit.h>
 #import "WSNZEarthquakeModel.h"
 #import "EarthquakesUpdatedDelegate.h"
+#import "EarthquakeAnnotation.h"
+#import "WSNZEarthquakeDetailViewController.h"
 
 @interface WSNZMapViewController : UIViewController <MKMapViewDelegate, EarthquakesUpdatedDelegate>
 @property (nonatomic, strong) WSNZEarthquakeModel* model;

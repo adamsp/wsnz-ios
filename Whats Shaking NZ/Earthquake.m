@@ -48,12 +48,19 @@
     return CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longitude.doubleValue);
 }
 
--(id <MKAnnotation>) makeMKAnnotation
+-(MKPinAnnotationColor)pinColor
 {
-    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = self.coordinate;
-    pin.title = self.formattedMagnitude;
-    pin.subtitle = self.formattedDepth;
-    return pin;
+    if(self.magnitude.doubleValue > 3.5) {
+        return MKPinAnnotationColorRed;
+    } else {
+        return MKPinAnnotationColorGreen;
+    }
 }
+
+-(EarthquakeAnnotation *) makeMKAnnotationForIndex:(NSInteger)index
+{
+    EarthquakeAnnotation *annotation = [[EarthquakeAnnotation alloc] initWithCoordinate:self.coordinate title:self.formattedMagnitude subTitle:self.formattedDepth index:index];
+    return annotation;
+}
+
 @end
