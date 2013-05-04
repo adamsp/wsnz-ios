@@ -17,9 +17,8 @@
 
 @synthesize model = _model;
 
-// TODO This exists here and in the map VC.
 static NSString *segueId = @"showDetail";
-static NSString *cellId = @"quakeDescriptionCell";
+static NSString *cellId = @"quakeDetailCell";
 
 - (WSNZEarthquakeModel*) model {
     if (!_model)
@@ -61,12 +60,24 @@ static NSString *cellId = @"quakeDescriptionCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    EarthquakeTableCell *cell = (EarthquakeTableCell *)[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    if (cell == nil) {
+        
+        NSArray* views = [[NSBundle mainBundle] loadNibNamed:@"EarthquakeTableCell_iPhone" owner:nil options:nil];
+        
+        for (UIView *view in views) {
+            if([view isKindOfClass:[UITableViewCell class]])
+            {
+                cell = (EarthquakeTableCell*)view;
+            }
+        }
+    }
     
-    // TODO Should be using a custom view
     Earthquake *earthquake = [[self.model quakes] objectAtIndex:indexPath.row];
-    cell.textLabel.text = earthquake.formattedMagnitude;
-    cell.detailTextLabel.text = earthquake.formattedDate;
+    cell.magnitudeLabel.text = earthquake.formattedMagnitude;
+    // TODO Well, this isn't a location...
+    cell.locationLabel.text = earthquake.formattedDepth;
+    cell.dateLabel.text = earthquake.formattedDate;
     
     return cell;
 }

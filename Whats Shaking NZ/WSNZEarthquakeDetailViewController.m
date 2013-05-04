@@ -20,8 +20,7 @@ static const int STATUS_TAG = 4;
 
 @synthesize quake;
 
-// TODO This exists here and in the map VC.
-static NSString *reuseId = @"pin";
+static NSString *reuseId = @"detailViewPin";
 
 - (void)viewDidLoad
 {
@@ -47,7 +46,8 @@ static NSString *reuseId = @"pin";
     
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
-        annotationView.canShowCallout = YES;
+        // We don't want the pin to do anything on the detail page.
+        annotationView.canShowCallout = NO;
     } else {
         annotationView.annotation = annotation;
     }

@@ -18,9 +18,7 @@
 static double NZ_CENTRE_LATITUDE = -41;
 static double NZ_CENTRE_LONGITUDE = 173;
 
-// TODO This exists here and in the detail VC.
-static NSString *reuseId = @"pin";
-// TODO This exists here and in the list VC.
+static NSString *reuseId = @"mapViewPin";
 static NSString *segueId = @"showDetail";
 
 int selectedIndex;

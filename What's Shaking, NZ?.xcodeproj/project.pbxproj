@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66091D161734FC6B00D27706 /* EarthquakeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66091D151734FC6B00D27706 /* EarthquakeTableCell.m */; };
 		6613DAAE172888F0002D0FF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6613DAAD172888F0002D0FF2 /* UIKit.framework */; };
 		6613DAB0172888F0002D0FF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6613DAAF172888F0002D0FF2 /* Foundation.framework */; };
 		6613DAB2172888F0002D0FF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6613DAB1172888F0002D0FF2 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66091D141734FC6B00D27706 /* EarthquakeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EarthquakeTableCell.h; sourceTree = "<group>"; };
+		66091D151734FC6B00D27706 /* EarthquakeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EarthquakeTableCell.m; sourceTree = "<group>"; };
 		6613DAAA172888F0002D0FF2 /* Whats Shaking NZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whats Shaking NZ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6613DAAD172888F0002D0FF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6613DAAF172888F0002D0FF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				66E552C3172E60FD00D160AE /* WSNZMapViewController.m */,
 				66E552C51734571B00D160AE /* EarthquakeAnnotation.h */,
 				66E552C61734571B00D160AE /* EarthquakeAnnotation.m */,
+				66091D141734FC6B00D27706 /* EarthquakeTableCell.h */,
+				66091D151734FC6B00D27706 /* EarthquakeTableCell.m */,
 			);
 			path = "Whats Shaking NZ";
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */,
 				66E552C4172E60FD00D160AE /* WSNZMapViewController.m in Sources */,
 				66E552C71734571B00D160AE /* EarthquakeAnnotation.m in Sources */,
+				66091D161734FC6B00D27706 /* EarthquakeTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
