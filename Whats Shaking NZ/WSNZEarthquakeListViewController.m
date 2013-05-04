@@ -75,6 +75,11 @@ static NSString *cellId = @"quakeDetailCell";
     
     Earthquake *earthquake = [[self.model quakes] objectAtIndex:indexPath.row];
     cell.magnitudeLabel.text = earthquake.formattedMagnitude;
+    if (earthquake.magnitude.doubleValue > 3.5) {
+        [cell.magnitudeLabel setTextColor:[UIColor highlightColorForList]];
+    } else {
+        [cell.magnitudeLabel setTextColor:[UIColor standardColorForList]];
+    }
     // TODO Well, this isn't a location...
     cell.locationLabel.text = earthquake.formattedDepth;
     cell.dateLabel.text = earthquake.formattedDate;
