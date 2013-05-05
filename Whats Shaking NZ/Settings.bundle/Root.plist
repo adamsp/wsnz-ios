@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Notifications</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<false/>
+			<key>Key</key>
+			<string>notifications_enabled</string>
+			<key>Title</key>
+			<string>Notifications Enabled</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Notification Magnitude</string>
+		</dict>
+		<dict>
+			<key>Titles</key>
+			<array>
+				<string>3.5</string>
+				<string>3.6</string>
+				<string>3.7</string>
+				<string>3.8</string>
+				<string>3.9</string>
+				<string>4.0</string>
+				<string>4.1</string>
+				<string>4.2</string>
+				<string>4.3</string>
+				<string>4.4</string>
+				<string>4.5</string>
+				<string>4.6</string>
+				<string>4.7</string>
+				<string>4.8</string>
+				<string>4.9</string>
+				<string>5.0</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<real>3.5</real>
+				<real>3.6</real>
+				<real>3.7</real>
+				<real>3.8</real>
+				<real>3.9</real>
+				<real>4</real>
+				<real>4.1</real>
+				<real>4.2</real>
+				<real>4.3</real>
+				<real>4.4</real>
+				<real>4.5</real>
+				<real>4.6</real>
+				<real>4.7</real>
+				<real>4.8</real>
+				<real>4.9</real>
+				<real>5</real>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Magnitude</string>
+			<key>Key</key>
+			<string>notification_magnitude</string>
+			<key>DefaultValue</key>
+			<real>4</real>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

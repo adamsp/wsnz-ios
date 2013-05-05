@@ -85,6 +85,7 @@ int selectedIndex;
     
     EarthquakeAnnotation *quakeAnnotation = (EarthquakeAnnotation *)annotation;
     Earthquake *quake = self.model.quakes[quakeAnnotation.index];
+    
     annotationView.pinColor = quake.pinColor;
     
     UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];

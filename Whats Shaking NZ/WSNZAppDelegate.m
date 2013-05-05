@@ -13,6 +13,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Register the preference defaults early.
+    NSDictionary *appDefaults = [NSDictionary
+                                 dictionaryWithObjects:
+                                 [NSArray arrayWithObjects:[NSNumber numberWithBool:NO], [NSNumber numberWithDouble:4.0], nil]
+                                 forKeys:
+                                 [NSArray arrayWithObjects:@"notifications_enabled", @"notification_magnitude", nil] ];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
     return YES;
 }
 							

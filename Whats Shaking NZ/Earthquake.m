@@ -14,6 +14,7 @@
 @synthesize reference;
 @synthesize agency;
 @synthesize status;
+@synthesize shouldHighlight;
 
 -(void) setDepth:(NSNumber *)depth {
     _depth = depth;
@@ -48,9 +49,14 @@
     return CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longitude.doubleValue);
 }
 
+-(bool) shouldHighlight
+{
+    return self.magnitude.doubleValue >= [[NSUserDefaults standardUserDefaults] doubleForKey:@"notification_magnitude"];
+}
+
 -(MKPinAnnotationColor)pinColor
 {
-    if(self.magnitude.doubleValue > 3.5) {
+    if(self.shouldHighlight) {
         return MKPinAnnotationColorRed;
     } else {
         return MKPinAnnotationColorGreen;

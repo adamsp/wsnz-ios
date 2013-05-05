@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSString* formattedDate;
 @property (nonatomic, retain) NSString* status;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic) bool shouldHighlight;
 @property (nonatomic) MKPinAnnotationColor pinColor;
 -(EarthquakeAnnotation *) makeMKAnnotationForIndex:(NSInteger) index;
 @end
