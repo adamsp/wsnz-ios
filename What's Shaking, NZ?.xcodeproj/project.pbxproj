@@ -25,6 +25,7 @@
 		6613DADE17289AAC002D0FF2 /* WSNZEarthquakeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6613DADD17289AAC002D0FF2 /* WSNZEarthquakeModel.m */; };
 		66B7095117350FD7009DF510 /* UIColor+WSNZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B7095017350FD7009DF510 /* UIColor+WSNZ.m */; };
 		66B709531735F10B009DF510 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66B709521735F10B009DF510 /* Settings.bundle */; };
+		66B709561737A326009DF510 /* DistanceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B709551737A326009DF510 /* DistanceTool.m */; };
 		66E552BF172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */; };
 		66E552C1172E5BD700D160AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E552C0172E5BD700D160AE /* CoreLocation.framework */; };
 		66E552C4172E60FD00D160AE /* WSNZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E552C3172E60FD00D160AE /* WSNZMapViewController.m */; };
@@ -64,6 +65,8 @@
 		66B7094F17350FD7009DF510 /* UIColor+WSNZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WSNZ.h"; sourceTree = "<group>"; };
 		66B7095017350FD7009DF510 /* UIColor+WSNZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WSNZ.m"; sourceTree = "<group>"; };
 		66B709521735F10B009DF510 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		66B709541737A326009DF510 /* DistanceTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceTool.h; sourceTree = "<group>"; };
+		66B709551737A326009DF510 /* DistanceTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceTool.m; sourceTree = "<group>"; };
 		66E552BD172CDD8000D160AE /* WSNZEarthquakeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNZEarthquakeDetailViewController.h; sourceTree = "<group>"; };
 		66E552BE172CDD8000D160AE /* WSNZEarthquakeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNZEarthquakeDetailViewController.m; sourceTree = "<group>"; };
 		66E552C0172E5BD700D160AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -148,6 +151,8 @@
 				66B7094F17350FD7009DF510 /* UIColor+WSNZ.h */,
 				66B709521735F10B009DF510 /* Settings.bundle */,
 				66B7095017350FD7009DF510 /* UIColor+WSNZ.m */,
+				66B709541737A326009DF510 /* DistanceTool.h */,
+				66B709551737A326009DF510 /* DistanceTool.m */,
 			);
 			path = "Whats Shaking NZ";
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				66E552C71734571B00D160AE /* EarthquakeAnnotation.m in Sources */,
 				66091D161734FC6B00D27706 /* EarthquakeTableCell.m in Sources */,
 				66B7095117350FD7009DF510 /* UIColor+WSNZ.m in Sources */,
+				66B709561737A326009DF510 /* DistanceTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

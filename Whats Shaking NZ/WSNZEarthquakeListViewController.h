@@ -12,6 +12,7 @@
 #import "WSNZEarthquakeDetailViewController.h"
 #import "EarthquakeTableCell.h"
 #import "UIColor+WSNZ.h"
+#import "DistanceTool.h"
 
 @interface WSNZEarthquakeListViewController : UITableViewController <EarthquakesUpdatedDelegate>
 @property (nonatomic, strong) WSNZEarthquakeModel* model;

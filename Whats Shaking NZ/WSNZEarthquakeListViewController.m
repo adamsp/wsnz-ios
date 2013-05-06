@@ -69,8 +69,7 @@ static NSString *cellId = @"quakeDetailCell";
     } else {
         [cell.magnitudeLabel setTextColor:[UIColor standardColorForList]];
     }
-    // TODO Well, this isn't a location...
-    cell.locationLabel.text = [earthquake.formattedDepth stringByAppendingString:@" deep. Location details..."];
+    cell.locationLabel.text = [DistanceTool closestTownToCoordinate:earthquake.coordinate];
     cell.dateLabel.text = earthquake.formattedDate;
     
     return cell;
