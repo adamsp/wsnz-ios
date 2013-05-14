@@ -55,15 +55,15 @@ static NSDictionary *_locations;
 // For calculating distance
 static double RADIO = 6378.16; // Radius of the earth, in km
 
-+ (double) radiansFromDegrees:(double) degrees
+- (double) radiansFromDegrees:(double) degrees
 {
     return degrees * M_PI / 180.0;
 }
 
-+ (NSString *) directionFromLocation:(CLLocationCoordinate2D) closestTown toOtherLocation: (CLLocationCoordinate2D) quakeEpicenter
+- (NSString *) directionFromLocation:(CLLocationCoordinate2D) closestTown toOtherLocation: (CLLocationCoordinate2D) quakeEpicenter
 {
-    double dLon = abs(quakeEpicenter.longitude - closestTown.longitude);
-    double dLat = abs(quakeEpicenter.latitude - closestTown.latitude);
+    double dLon = fabs(quakeEpicenter.longitude - closestTown.longitude);
+    double dLat = fabs(quakeEpicenter.latitude - closestTown.latitude);
     double brng = atan(dLat / dLon);
     
     NSString *direction;
@@ -97,23 +97,23 @@ static double RADIO = 6378.16; // Radius of the earth, in km
  As seen here: http://stackoverflow.com/questions/27928/how-do-i-calculate-distance-between-two-latitude-longitude-points
  Modified to suit Objective-C.
  */
-+ (double) distanceInKilometersBetweenPlaceOne:(CLLocationCoordinate2D)placeOne andPlaceTwo:(CLLocationCoordinate2D)placeTwo
+- (double) distanceInKilometersBetweenPlaceOne:(CLLocationCoordinate2D)placeOne andPlaceTwo:(CLLocationCoordinate2D)placeTwo
 {
     double lon1 = placeOne.longitude;
     double lat1 = placeOne.latitude;
     double lon2 = placeTwo.longitude;
     double lat2 = placeTwo.latitude;
-    double dlon = [DistanceTool radiansFromDegrees:(lon2 - lon1)];
-    double dlat = [DistanceTool radiansFromDegrees:(lat2 - lat1)];
+    double dlon = [self radiansFromDegrees:(lon2 - lon1)];
+    double dlat = [self radiansFromDegrees:(lat2 - lat1)];
     
     double a = (sin(dlat / 2) * sin(dlat / 2))
-    + cos([DistanceTool radiansFromDegrees:lat1]) * cos([DistanceTool radiansFromDegrees:lat2])
+    + cos([self radiansFromDegrees:lat1]) * cos([self radiansFromDegrees:lat2])
     * (sin(dlon / 2) * sin(dlon / 2));
     double angle = 2 * atan2(sqrt(a), sqrt(1 - a));
     return angle * RADIO;
 }
 
-+ (NSString *) closestTownToCoordinate:(CLLocationCoordinate2D)placeOne
+- (NSString *) closestTownToCoordinate:(CLLocationCoordinate2D)placeOne
 {
     // Find the distance from the closest town
     double closestTownDistance = -1;
@@ -126,12 +126,12 @@ static double RADIO = 6378.16; // Radius of the earth, in km
         {
             closestTown = placeTwo;
             closestTownName = location;
-            closestTownDistance = [DistanceTool distanceInKilometersBetweenPlaceOne: placeOne andPlaceTwo:placeTwo];
+            closestTownDistance = [self distanceInKilometersBetweenPlaceOne: placeOne andPlaceTwo:placeTwo];
 
         }
         else
         {
-            double distance = [DistanceTool distanceInKilometersBetweenPlaceOne: placeOne andPlaceTwo:placeTwo];
+            double distance = [self distanceInKilometersBetweenPlaceOne: placeOne andPlaceTwo:placeTwo];
             if(distance < closestTownDistance)
             {
                 closestTown = placeTwo;
@@ -142,9 +142,7 @@ static double RADIO = 6378.16; // Radius of the earth, in km
     }
     
     // Find direction from the closest town
-    NSString *direction = [DistanceTool directionFromLocation: closestTown toOtherLocation: placeOne];
+    NSString *direction = [self directionFromLocation: closestTown toOtherLocation: placeOne];
     
-    // TODO Figure out how to localise this/extract it into strings.xml.
-    // The problem is, we don't have access to getString() to fetch from strings.xml
     return [NSString stringWithFormat:@"%.0f km %@ of %@", closestTownDistance, direction, closestTownName];}
 @end

@@ -10,6 +10,5 @@
 #import <MapKit/MapKit.h>
 
 @interface DistanceTool : NSObject
-+ (double) distanceInKilometersBetweenPlaceOne:(CLLocationCoordinate2D) placeOne andPlaceTwo:(CLLocationCoordinate2D) placeTwo;
-+ (NSString *) closestTownToCoordinate:(CLLocationCoordinate2D) coordinate;
+- (NSString *) closestTownToCoordinate:(CLLocationCoordinate2D) coordinate;
 @end

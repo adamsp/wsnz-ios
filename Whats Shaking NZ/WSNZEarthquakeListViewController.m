@@ -10,15 +10,24 @@
 #import "Earthquake.h"
 
 @interface WSNZEarthquakeListViewController ()
-
+@property (nonatomic) DistanceTool *distanceTool;
 @end
 
 @implementation WSNZEarthquakeListViewController
 
+@synthesize distanceTool = _distanceTool;
 @synthesize model = _model;
+
 
 static NSString *segueId = @"showDetail";
 static NSString *cellId = @"quakeDetailCell";
+
+- (DistanceTool *) distanceTool {
+    if (!_distanceTool) {
+        _distanceTool = [[DistanceTool alloc] init];
+    }
+    return _distanceTool;
+}
 
 - (WSNZEarthquakeModel*) model {
     if (!_model)
@@ -69,7 +78,7 @@ static NSString *cellId = @"quakeDetailCell";
     } else {
         [cell.magnitudeLabel setTextColor:[UIColor standardColorForList]];
     }
-    cell.locationLabel.text = [DistanceTool closestTownToCoordinate:earthquake.coordinate];
+    cell.locationLabel.text = [self.distanceTool closestTownToCoordinate:earthquake.coordinate];
     cell.dateLabel.text = earthquake.formattedDate;
     
     return cell;

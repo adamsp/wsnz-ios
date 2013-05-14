@@ -16,6 +16,18 @@
 @synthesize status;
 @synthesize shouldHighlight;
 
+static NSDateFormatter* _dateFormatter;
++(NSDateFormatter *) dateFormatter
+{
+    if(_dateFormatter == nil)
+    {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+        [_dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    }
+    return _dateFormatter;
+}
+
 -(void) setDepth:(NSNumber *)depth {
     _depth = depth;
     _formattedDepth = [NSString stringWithFormat:@"%d km", [depth intValue]];
@@ -36,8 +48,7 @@
 
 -(void) setDate:(NSDate *)date {
     _date = date;
-    // TODO Use NSDateFormatter
-    _formattedDate = [date description];
+    _formattedDate = [Earthquake.dateFormatter stringFromDate:date];
 }
 
 -(NSString *)formattedDate {

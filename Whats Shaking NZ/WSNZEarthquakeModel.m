@@ -12,6 +12,7 @@
 - (void) notifyListeners;
 @property (nonatomic) NSMutableArray *listeners;
 @property (nonatomic) NSMutableData *receivedData;
+@property (nonatomic) NSDateFormatter *dateParser;
 @end
 
 
@@ -21,7 +22,6 @@
 @synthesize receivedData;
 
 @synthesize quakes;
-
 
 #pragma mark Singleton
 static WSNZEarthquakeModel *instance = nil;
@@ -37,6 +37,18 @@ static bool downloading = false;
 
 + (id) allocWithZone:(NSZone *)zone {
     return [self instance];
+}
+
+- (NSDateFormatter *) dateParser
+{
+    if(_dateParser == nil)
+    {
+        // Date format 2013-05-14 09:28:03.656000 in UTC.
+        _dateParser = [[NSDateFormatter alloc] init];
+        _dateParser.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSSSSS";
+        [_dateParser setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    }
+    return _dateParser;
 }
 
 - (id) copy {
@@ -99,11 +111,11 @@ static bool downloading = false;
         quake.magnitude = [properties objectForKey:@"magnitude"];
         quake.reference = [properties objectForKey:@"publicid"];
         quake.agency = [properties objectForKey:@"agency"];
-        quake.date = [properties objectForKey:@"origintime"];
+        quake.date = [self.dateParser dateFromString:[properties objectForKey:@"origintime"]];
         quake.status = [properties objectForKey:@"status"];
         [parsedQuakes addObject:quake];
     }
-    self.quakes = parsedQuakes; // = parsed quakes...
+    self.quakes = parsedQuakes;
     [self notifyListeners];
     downloading = false;
 }
